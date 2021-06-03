@@ -15,7 +15,7 @@ deploy:
   provider: heroku
   api_key:
     secure: #this needs to be filled in!
-  app: be2102-consultancy-project-backend
+  app: be2102-consultancy-project-be
   on:
     repo: Consultancy-Project/consultancy-backend
   run: rails db:migrate
