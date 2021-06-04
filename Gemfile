@@ -12,7 +12,6 @@ gem 'figaro'
 
 group :development, :test do
   gem 'json'
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
