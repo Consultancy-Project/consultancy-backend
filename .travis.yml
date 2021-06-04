@@ -1,6 +1,6 @@
 language: ruby
 rbenv:
-  - 2.5.3
+- 2.5.3
 addons:
   postgresql: 9.6
 cache:
@@ -9,13 +9,14 @@ before_install:
 - yes | gem update --system --force
 - gem install bundler
 script:
-  - bundle exec rails db:{create,migrate} RAILS_ENV=test
-  - bundle exec rspec
+- bundle exec rails db:{create,migrate} RAILS_ENV=test
+- bundle exec rspec
 deploy:
   provider: heroku
   api_key:
-    secure: #this needs to be filled in!
+    secure: MeWZeEC64kMJU7ekuQXHx78TsXlWJnZAfDuQ1TF90CJUWu/H6GOJJyujoXTtocZQcOR0Xi7vYIAjz40ED48hb5LG3WtAAw9Y1ad1foo1wSFE/LLIEWbG50RQ6ZuXtvWsVkN2BIoBgJEdEkDDwUewVRVK6wQ3o4868aIGxT4oYe9rQYnQV+3GAivykp3TuWW0bqVBQ9SmTCujXAIlgP79Yryo/oEtWcls2XvWyJ/BqcqkyF2tIuJbiTrWCHtCCGiD4/x6ldrBlcOs2iliAYAX2iUHtEtjRTtY1k0bgafQHvB70N8riUz2HJ1UjPwanKDXgafY6gf7Quz3Q4lkmD70+OAjFu1dezkJwyUGd1kmqB4G6QgGlDl4IQfE8QgVpGS01zFH9JYhQrGRzrf7mVX4lQ4NXRsyIH9dKVWmJXB7I+y4N5F60G9JdxDXdWqIEWt9Hgnjcie8JZV5teud06Iu4dFXg/rKvHglgyiioQxrnfwlROzn3/IEo9mjDwCuuAM4OirJlBymVGMxJeX9OOVQkgqhshFKSdECDMCwvDLxl2FifSgVaqYxJDQrbV3oTNPrqjD3JQN/Mu2lg0E+rljevUNQWPJe8QFH0jj5EB541qEgCcAghr8JKkHmlE8S5plHBHC2rYAxA9CORGwpTAmKd6TB0cqA8WlhOSfuRwpHa1Y=
   app: be2102-consultancy-project-be
   on:
     repo: Consultancy-Project/consultancy-backend
-  run: rails db:migrate
+  run:
+  - rails db:migrate
