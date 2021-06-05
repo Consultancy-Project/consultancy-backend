@@ -5,5 +5,6 @@ class Api::V1::NewsController < ApplicationController
 
     articles = response.map {|data| Article.new(data)}
     render json: ArticleSerializer.new(articles)
+    # THIS IS A TEST SO I CAN TRIGGER BUILD ON GH BC IT PASSES ON TRAVIS
   end
 end
