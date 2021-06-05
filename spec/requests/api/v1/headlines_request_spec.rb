@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Finnhub headlines' do
+RSpec.describe 'Finnhub headlines', :vcr do
   it 'can get top 3 headlines' do
     get "/api/v1/news"
     news = JSON.parse(response.body, symbolize_names: true)
