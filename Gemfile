@@ -7,8 +7,9 @@ gem 'rails', '~> 5.2.6'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'jsonapi-serializer'
+gem 'fast_jsonapi'
 gem 'figaro'
+gem 'faraday'
 
 group :development, :test do
   gem 'json'
