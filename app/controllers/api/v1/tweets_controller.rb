@@ -4,4 +4,3 @@ class Api::V1::TweetsController < ApplicationController
     render json: TweetSerializer.new(tweets)
   end
 end
-
