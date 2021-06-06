@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/2/tweets/search/recent?query=stocks
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - "<twitter_token>"
+      User-Agent:
+      - Faraday v1.4.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 06 Jun 2021 00:37:21 UTC
+      Server:
+      - tsa_a
+      Set-Cookie:
+      - guest_id=v1%3A162293984110693144; Max-Age=63072000; Expires=Tue, 06 Jun 2023
+        00:37:21 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      - personalization_id="v1_lrZIX81AkUNe11Mz+v5Jfg=="; Max-Age=63072000; Expires=Tue,
+        06 Jun 2023 00:37:21 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache, no-store, max-age=0
+      Content-Length:
+      - '1110'
+      X-Access-Level:
+      - read
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Rate-Limit-Limit:
+      - '450'
+      X-Rate-Limit-Reset:
+      - '1622940212'
+      Content-Disposition:
+      - attachment; filename=json.json
+      X-Content-Type-Options:
+      - nosniff
+      X-Rate-Limit-Remaining:
+      - '445'
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - 4388e2976ae1e9e6d866661c6bfb951bb6928193ca06313f89b23417035464eb
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjpbeyJpZCI6IjE0MDEzMzczMjYxODY0NzE0MjYiLCJ0ZXh0IjoiQGJpbmFuY2UgVW5pcXVlIHByYXllciBydWcgd2l0aCAjbGlmZSBzdG9yeS5cbkRldGFpbHMgb24gdGhlIGxpbmsgYmVsb3c7XG5cbmh0dHBzOi8vdC5jby9wYkEwdnBKNGFGXG5cbiNSZWFsRXN0YXRlICNmaW50ZWNoICNDT1ZJRDE5ICNmYXNoaW9uICNJbnNpZGVycyAj2KfZhNij2LHYr9mGICPYp9mE2LPYudmI2K/ZitmHX9in2YTZitmF2YYgI2FydHdvcmvguK3guIvguJfguIsgI1R3aXR0ZXJCYW4gI0ZJRkEyMSAjU2F0dXJkYXlNb3JuaW5nICNhdWN0aW9uICNRYXRhcjIwMjIgI2ludmVzdGluZyAjc3RvY2tzICNsaWZlc3R5bGUgI9mB2YTYs9i32YrZhiAjUGFsZXN0aW5lIn0seyJpZCI6IjE0MDEzMzczMTk5NzQ2Mzc1NzQiLCJ0ZXh0IjoiQE1hZWdhbGljaW91c3MgSSBsb3ZlIHlvdSBtb3JlIHRoYW4gTWF0dCBsb3ZlcyBzdG9ja3MgXHVEODNFXHVERDdBXHVEODNEXHVEQzk14pml77iPIn0seyJpZCI6IjE0MDEzMzczMTc5NDQ1MzI5OTIiLCJ0ZXh0IjoiUlQgQEFydW5zdG9ja2d1cnU6IE5hbWUgMyBoaWdoIGNvbnZpY3Rpb24gc3RvY2tzIGd1eXMgd2hpY2ggeW91IGZlZWwgd291bGQgZ3JvdyBpdCdzIHByb2ZpdHMgYXQgMTUtMTglIENhZ3IgZm9yIG5leHQgNSB5ZWFycy5cblxuTWU6IFxuXG4xLkxhdXLigKYifSx7ImlkIjoiMTQwMTMzNzMwMzYyMTA0NjI3NSIsInRleHQiOiJSVCBAT3JpZ2luYWxfRzAxOiBAQW50b25pb1RoZU1leGkgQHJvY2tzdGFyX3N0b2NrcyB0aGlzIGlzIGV4YWN0bHkgd2hhdCBJIHBpY3R1cmUgcmVnYXJkaW5nICNBTUNTcXVlZXplIn0seyJpZCI6IjE0MDEzMzcyOTc1OTM4MzE0MjUiLCJ0ZXh0IjoiUlQgQEFudG9uaW9UaGVNZXhpOiBAcm9ja3N0YXJfc3RvY2tzIGh0dHBzOi8vdC5jby8zalJLcWRoaXd1In0seyJpZCI6IjE0MDEzMzcyNjY4NjIyMzE1NTgiLCJ0ZXh0IjoiQFNwYWNlWCBAU0lSSVVTWE0gVW5pcXVlIHByYXllciBydWcgd2l0aCAjbGlmZSBzdG9yeS5cbkRldGFpbHMgb24gdGhlIGxpbmsgYmVsb3c7XG5cbmh0dHBzOi8vdC5jby9wYkEwdnBKNGFGXG5cbiNSZWFsRXN0YXRlICNmaW50ZWNoICNDT1ZJRDE5ICNmYXNoaW9uICNJbnNpZGVycyAj2KfZhNij2LHYr9mGICPYp9mE2LPYudmI2K/ZitmHX9in2YTZitmF2YYgI2FydHdvcmvguK3guIvguJfguIsgI1R3aXR0ZXJCYW4gI0ZJRkEyMSAjU2F0dXJkYXlNb3JuaW5nICNhdWN0aW9uICNRYXRhcjIwMjIgI2ludmVzdGluZyAjc3RvY2tzICNsaWZlc3R5bGUgI9mB2YTYs9i32YrZhiAjUGFsZXN0aW5lIn0seyJpZCI6IjE0MDEzMzcyNjI2NjM3NzgzMDgiLCJ0ZXh0IjoiVeKAiy7igItTLiBTZWN1cml0aWVzIGFuZCBFeGNoYW5nZSBDb21taXNzaW9uOiBTRUMgcGxlYXNlIGludmVzdGlnYXRlIGlsbGVnYWwgTmFrZWQgU2hvcnRpbmcgb2YgQU1DICZhbXA7IEdBTUVTVE9QIHN0b2NrcyAtIFNpZ24gdGhlIFBldGl0aW9uISBodHRwczovL3QuY28vSDNVTFF2YWJLQyB2aWEgQENoYW5nZSJ9LHsiaWQiOiIxNDAxMzM3MjUzNjM3NTk1MTM5IiwidGV4dCI6IkhlciBmYWNlIHNhaWQgaXQgYWxsISBAcm9ja3N0YXJfc3RvY2tzIGtpbGxpbmcgdGhlIEREISBMb3ZlIHlvdXIgaW5wdXQgaHR0cHM6Ly90LmNvL2pCSnMzd29LckcifSx7ImlkIjoiMTQwMTMzNzI0NzExNTQ1MjQxNyIsInRleHQiOiJSVCBAZXBpY3RyYWRlczE6IFlvdSBldmVyIHNlZSB0aG9zZSBnYW1ibGVycyB0aGF0IGtlZXAgdXBwaW5nIHRoZWlyIGJldCBhcyB0aGV5IGxvc2UgdGhlaXIgNnRoIGhhbmQgaW4gYSByb3cgYXQgYmxhY2tqYWNrLiBET05UIERPIFRIQVQgdyBz4oCmIn0seyJpZCI6IjE0MDEzMzcyMzg5MDMwMDUxODQiLCJ0ZXh0IjoiUlQgQHRoZXBvcnNoYWVkbXVuOiBZb3UgY2FuIGhhdmUgYSA5LTUgYW5kIGhhdmUgcmVudGFsIHByb3BlcnRpZXMgXG5cbllvdSBjYW4gaGF2ZSBhIDktNSBhbmQgaGF2ZSB2ZW5kaW5nIG1hY2hpbmVzIFxuXG5Zb3UgY2FuIGhhdmUgYSA5LTUgYW5kIGnigKYifV0sIm1ldGEiOnsibmV3ZXN0X2lkIjoiMTQwMTMzNzMyNjE4NjQ3MTQyNiIsIm9sZGVzdF9pZCI6IjE0MDEzMzcyMzg5MDMwMDUxODQiLCJyZXN1bHRfY291bnQiOjEwLCJuZXh0X3Rva2VuIjoiYjI2djg5YzE5enFnOG8zZnBkZzdjNXJlYzVrZG4xMDlvenN6ZzJpeDZhcm5oIn19
+  recorded_at: Sun, 06 Jun 2021 00:37:21 GMT
+recorded_with: VCR 6.0.0
