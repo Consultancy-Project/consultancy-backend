@@ -5,7 +5,7 @@ describe TweetFacade do
       it "returns array of tweet OBJECT data", :vcr do
         all_tweets = TweetFacade.recent_tweets
         expect(all_tweets).to be_a Array
-        expect(all_tweets.count).to eq(10)
+        expect(all_tweets.count).to eq(3)
 
         tweet = all_tweets.first
         expect(tweet).to be_a Tweet
