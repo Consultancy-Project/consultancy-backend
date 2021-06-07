@@ -10,7 +10,7 @@ RSpec.describe Article do
         "image": "https://image.cnbcfm.com/api/v1/image/106832585-1611944435425EQHA-U-Photo-20210129-027-Press-17-jpg?v=1611944599",
         "related": "",
         "source": "CNBC",
-        "summary": "CPI inflation data is a highlight of the week ahead, as investors look forward to the Fed's June meeting.",
+        "summary": "CPI inflation data is a highlight of the week ahead",
         "url": "https://www.cnbc.com/2021/06/04/amc-meme-stocks-could-spark"
       }
       article = Article.new(attrs)
@@ -19,5 +19,9 @@ RSpec.describe Article do
       expect(article.headline.class).to eq(String)
       expect(article.url).to eq("https://www.cnbc.com/2021/06/04/amc-meme-stocks-could-spark")
       expect(article.url.class).to eq(String)
+      expect(article.image).to eq("https://image.cnbcfm.com/api/v1/image/106832585-1611944435425EQHA-U-Photo-20210129-027-Press-17-jpg?v=1611944599")
+      expect(article.image.class).to eq(String)
+      expect(article.summary).to eq("CPI inflation data is a highlight of the week ahead")
+      expect(article.summary.class).to eq(String)
     end
   end
