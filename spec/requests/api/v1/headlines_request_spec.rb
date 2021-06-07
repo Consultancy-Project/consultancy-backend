@@ -21,6 +21,10 @@ RSpec.describe 'Finnhub headlines', :vcr do
       expect(article[:attributes][:headline]).to be_a(String)
       expect(article[:attributes]).to have_key(:url)
       expect(article[:attributes][:url]).to be_a(String)
+      expect(article[:attributes]).to have_key(:image)
+      expect(article[:attributes][:image]).to be_a(String)
+      expect(article[:attributes]).to have_key(:summary)
+      expect(article[:attributes][:summary]).to be_a(String)
     end
   end
 end
