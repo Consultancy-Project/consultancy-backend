@@ -10,6 +10,6 @@ class TweetService
   end
 
   def self.recent_tweets
-    parse_json(conn.get("/2/tweets/search/recent?query=stocks"))
+    parse_json(conn.get("/2/tweets/search/recent?query=stocks&expansions=author_id&user.fields=name"))
   end
 end

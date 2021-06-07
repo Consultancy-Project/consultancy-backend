@@ -1,5 +1,5 @@
 class TweetSerializer
   include FastJsonapi::ObjectSerializer
     
-  attributes :tweet
+  attributes :tweet, :username
 end
