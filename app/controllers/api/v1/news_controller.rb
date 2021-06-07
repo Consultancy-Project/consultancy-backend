@@ -4,4 +4,3 @@ class Api::V1::NewsController < ApplicationController
     render json: ArticleSerializer.new(articles)
   end
 end
-
