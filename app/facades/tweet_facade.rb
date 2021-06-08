@@ -1,8 +1,8 @@
 class TweetFacade
   def self.recent_tweets
     tweet_data = TweetService.recent_tweets
-    new_data = combine_users_and_tweets(tweet_data)
-    new_data.map do |data|
+    combined = combine_users_and_tweets(tweet_data)
+    combined.map do |data|
         Tweet.new(data)
     end
   end
@@ -15,6 +15,7 @@ class TweetFacade
       data[:id] = tweet_data[:data][index][:id]
       data[:username] = tweet_data[:includes][:users][index][:username]
       array << data
+      data = {}
     end
     array
   end
