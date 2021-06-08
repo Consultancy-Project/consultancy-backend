@@ -27,3 +27,4 @@
 
 /coverage/*
 vendor/bundle/
+/2.2.11/*

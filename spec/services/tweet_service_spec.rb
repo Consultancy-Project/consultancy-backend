@@ -5,10 +5,10 @@ describe TweetService do
     context 'returns tweets' do
       it 'test_artcile_service', :vcr do
         results = TweetService.recent_tweets
-        expect(results).to be_a(Array)
-        expect(results.first).to be_a(Hash)
-        expect(results.first).to have_key :id
-        expect(results.first).to have_key :text
+        expect(results).to be_a(Hash)
+        expect(results[:data].first).to be_a(Hash)
+        expect(results[:data].first).to have_key :id
+        expect(results[:data].first).to have_key :text
       end
     end
   end

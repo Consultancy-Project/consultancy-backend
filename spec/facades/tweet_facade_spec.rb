@@ -10,6 +10,7 @@ describe TweetFacade do
         tweet = all_tweets.first
         expect(tweet).to be_a Tweet
         expect(tweet.tweet).to be_a(String)
+        expect(tweet.username).to be_a(String)
       end
     end
   end
