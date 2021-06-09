@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Stock Tweets' do
-  it 'can get top 50 recent tweets' do ####, :vcr
+  it 'can get top 50 recent tweets', :vcr do
     get "/api/v1/tweets"
     tweets = JSON.parse(response.body, symbolize_names: true)
     expect(response).to be_successful
@@ -24,39 +24,44 @@ RSpec.describe 'Stock Tweets' do
     end
   end
   
-  it 'SAD PATH - Bad server response' do
-    # get "/api/v1/tweets"
-
-    json_response = {
-                      "title": "Unauthorized",
-                      "type": "about:blank",
-                      "status": 401,
-                      "detail": "Unauthorized"
-                    }
-
-    response_1 = stub_request(:get, "https://api.twitter.com/2/tweets/search/recent?expansions=author_id&query=stocks&user.fields=name").
-             with(
-               headers: {
-           	  'Accept'=>'*/*',
-           	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-           	  'Authorization'=>"Bearer #{ENV['twitter_token']}",
-           	  'User-Agent'=>'Faraday v1.4.2'
-               }).
-             to_return(status: 401, body: json_response.to_json, headers: {})
-    require "pry";binding.pry               
-    bad_response = TweetService.recent_tweets
-    # tweets = JSON.parse(response.body, symbolize_names: true)
-    expect(TweetService.recent_tweets).to raise_error(ExternalApiError)
-    expect(bad_response).to raise_error(ExternalApiError)
-
-    expect(tweets).to have_key(:errors)
-    expect(tweets[:errors]).to be_an(Array)
-
-    expect(tweet[:errors].first).to have_key(:status)
-    expect(tweet[:errors][0][:status]).to be_a(String)
-    expect(tweet[:errors].first).to have_key(:message)
-    expect(tweet[:errors][0][:message]).to be_a(String)
-    expect(tweet[:errors].first).to have_key(:code)
-    expect(tweet[:errors][0][:code]).to be_a(Integer)
-  end
+  # it 'SAD PATH - Bad server response' do
+  #   # WebMock.disable!
+  #   headers = { "Content-Type"=>"application/json", 
+  #               'Authorization'=>"Please_dont_work"             
+  #             }
+  # 
+  #   get "/api/v1/tweets", headers: headers
+  #   # json_response = {
+  #   #                   "title": "Unauthorized",
+  #   #                   "type": "about:blank",
+  #   #                   "status": 401,
+  #   #                   "detail": "Unauthorized"
+  #   #                 }
+  #   # 
+  #   response_1 = stub_request(:get, "https://api.twitter.com/2/tweets/search/recent?expansions=author_id&query=stocks&user.fields=name").
+  #            with(
+  #              headers: {
+  #          	  'Accept'=>'*/*',
+  #          	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+  #          	  'Authorization'=>"Bearer #{ENV['twitter_token']}",
+  #          	  'User-Agent'=>'Faraday v1.4.2'
+  #              }).
+  #            to_return(status: 401, body: json_response.to_json, headers: {})
+  # 
+  #   bad_response = TweetFacade.recent_tweets
+  #   # require "pry";binding.pry
+  #   # tweets = JSON.parse(response.body, symbolize_names: true)
+  #   expect(TweetService.recent_tweets).to raise_error(ExternalApiError)
+  #   expect(bad_response).to raise_error(ExternalApiError)
+  # 
+  #   expect(tweets).to have_key(:errors)
+  #   expect(tweets[:errors]).to be_an(Array)
+  # 
+  #   expect(tweet[:errors].first).to have_key(:status)
+  #   expect(tweet[:errors][0][:status]).to be_a(String)
+  #   expect(tweet[:errors].first).to have_key(:message)
+  #   expect(tweet[:errors][0][:message]).to be_a(String)
+  #   expect(tweet[:errors].first).to have_key(:code)
+  #   expect(tweet[:errors][0][:code]).to be_a(Integer)
+  # end
 end

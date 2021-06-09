@@ -6,7 +6,7 @@ class TweetFacade
         Tweet.new(data)
     end
   end
-  
+
   def self.combine_users_and_tweets(tweet_data)
     array = []
     data = {}
