@@ -10,14 +10,14 @@ class TweetFacade
   def self.combine_users_and_tweets(tweet_data)
     array = []
     data = {}
-    3.times do |index|
+    8.times do |index|
       data[:text] = tweet_data[:data][index][:text]
       data[:id] = tweet_data[:data][index][:id]
       data[:username] = tweet_data[:includes][:users][index][:username]
       array << data
       data = {}
     end
-    array
+    array.uniq.first(3)
   end
 end
 
